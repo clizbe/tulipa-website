@@ -1,6 +1,11 @@
+# macOS system files
 .DS_Store
+
+# Dependencies
 node_modules
-/dist
+
+# Production build files
+dist/
 
 # local env files
 .env.local
