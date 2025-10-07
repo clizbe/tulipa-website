@@ -1,15 +1,14 @@
 <template>
-  <v-container class="fill-height" max-width="900">
+  <v-container class="mx-auto" max-width="1500">
     <div>
       <v-img
-        class="mb-4"
-        height="150"
+        class="ma-10"
+        height="250"
         src="@/assets/logo.png"
       />
 
       <div class="mb-8 text-center">
-        <div class="text-body-2 font-weight-light mb-n1">Welcome to</div>
-        <h1 class="text-h2 font-weight-bold">Vuetify</h1>
+        <h1 class="text-h3 font-weight-bold">Tulipa is an open-source framework <br> </br>for analyzing energy systems.</h1>
       </div>
 
       <v-row>
