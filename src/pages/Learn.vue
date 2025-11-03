@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onBeforeMount } from 'vue'
 
 const pdfs = [
   {
@@ -67,12 +67,15 @@ const pdfs = [
 const openPDF = (url) => {
   window.open(url, '_blank')
 }
-onBeforeMount(() => {
-  const imagesToPreload = pdfs.map(p => p.thumbnail)
-  imagesToPreload.forEach(src => {
-    const img = new Image()
-    img.src = src
-  })
+onBeforeMount(async () => {
+  await Promise.all(
+    pdfs.map(p => new Promise(resolve => {
+      const img = new Image()
+      img.src = p.thumbnail
+      img.onload = resolve
+      img.onerror = resolve // in case an image fails
+    }))
+  )
 })
 </script>
 
