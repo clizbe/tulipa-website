@@ -1,3 +1,4 @@
+//This is an old file from the Vuetify template. Just keeping it a while for reference.
 <template>
   <v-container class="mx-auto" max-width="1500">
     <div>

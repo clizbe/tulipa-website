@@ -2,24 +2,23 @@
   <v-card
     class="mx-auto"
     max-width="1500"
-    title="Scope & Features"
     rounded="lg"
   >
-    <v-row>
+    <v-row class="pa-4">
       <v-col
-        v-for="(item, index) in feature_list"
-        :key="index"
-        cols="12"
-        md="6"
+      v-for="(item, index) in feature_list"
+      :key="index"
+      cols="12"
+      md="6"
       >
-        <v-list lines="one">
-          <v-list-item
-            :title="item.title"
-            :subtitle="item.subtitle"
-            prepend-icon="mdi-check-circle-outline"
-          >
-          </v-list-item>
-        </v-list>
+      <v-list lines="one">
+        <v-list-item
+        :title="item.title"
+        :subtitle="item.subtitle"
+        prepend-icon="mdi-check-circle-outline"
+        >
+        </v-list-item>
+      </v-list>
       </v-col>
     </v-row>
   </v-card>
@@ -29,43 +28,43 @@
   const feature_list = [
     {
       title: 'Investment Optimisation',
-      subtitle: 'Expand future energy systems to meet demands at the lowest cost.',
+      subtitle: 'Expand future energy systems to meet demands at the lowest societal cost.',
     },
     {
       title: 'Dispatch Optimisation',
       subtitle: 'Optimize operations of energy systems to assess policy impacts.',
     },
     {
-      title: 'All technologies',
+      title: 'All Technologies',
       subtitle: 'Configure technological limits through data.',
     },
     {
-      title: 'All energy carriers and materials',
-      subtitle: 'Electricity, gas, hydrogen, heat, biomass, plastic, apples...',
+      title: 'All Energy Carriers and Materials',
+      subtitle: 'Electricity, gas, hydrogen, heat, biomass, plastic, apples, you name it.',
     },
     {
-      title: 'Any geographical area',
-      subtitle: 'Regional, national, or continental - it only depends on data.',
+      title: 'Any Geographical Area',
+      subtitle: 'Regional, national, or continental - it all depends on data.',
     },
     {
-      title: 'Flexible Levels of Detail',
-      subtitle: 'Tailor the geographical, temporal, and technological resolution to answer the question at hand.',
+      title: 'Mixed Levels of Detail',
+      subtitle: 'Zoom-in on the area of interest, while keeping the rest in scope.',
     },
     {
-      title: 'Complex processes',
-      subtitle: 'Model virtually any process using multi-input, multi-output conversion units.',
+      title: 'Complex Processes',
+      subtitle: 'Model virtually any process using multi-input, multi-output conversion assets.',
     },
     {
       title: 'Short and Long-term storage',
-      subtitle: 'subtitle',
+      subtitle: 'Bring long-term storage to day-ahead markets to compete with other options.',
     },
     {
-      title: 'Item #6',
-      subtitle: 'subtitle',
+      title: 'Multi-year Transition Pathways',
+      subtitle: 'Find and compare optimal transition pathways for the coming decades.',
     },
     {
-      title: 'Item #6',
-      subtitle: 'subtitle',
+      title: 'Generalized Assets',
+      subtitle: 'Model any system using Producers, Consumers, Storage, Converters, and Flows.',
     },
   ]
 </script>
