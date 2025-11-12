@@ -1,6 +1,10 @@
 <template>
-  <v-app-bar :elevation="2" rounded>
-    <v-app-bar-title>Tulipa Energy</v-app-bar-title>
+  <v-app-bar :elevation="2" rounded color="background">
+    <v-app-bar-title>
+      <router-link to="/" class="title-link">
+        Tulipa Energy
+      </router-link>
+    </v-app-bar-title>
 
     <v-btn text="Home" to="/"></v-btn>
 
@@ -15,3 +19,15 @@
   </v-app-bar>
 
 </template>
+
+<style scoped>
+.title-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.title-link:hover {
+  color: inherit;
+}
+</style>

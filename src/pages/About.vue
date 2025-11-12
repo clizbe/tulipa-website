@@ -7,7 +7,21 @@
    Mailing List?
    Contact
   -->
-
+  <v-container class="mx-auto" max-width="900">
+    <div class="mt-14 mb-8 text-center">
+      <h1 class="text-h3 font-weight-bold">
+        Why build a new model?
+      </h1>
+      <div class="my-8"></div>
+      <p>
+        A new approach to energy system modelling required a fresh start. Tulipa is built
+        with a focus on scalability to large, complex systems. Adding features is easy, but adding
+        features that can scale to large systems and remain solvable is hard. Every feature we add to Tulipa is designed and tested width
+        scalability in mind. To implement this structure in an existing model would have required
+        a complete overhaul of the codebase, so we decided to start from scratch.
+      </p>
+      </div>
+  </v-container>
 
   <v-container class="mx-auto" max-width="1500">
       <div class="ma-10 mb-8 text-center">

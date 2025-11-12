@@ -12,6 +12,7 @@ declare module 'vue' {
     Features: typeof import('./src/components/Features.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    NewsletterSignup: typeof import('./src/components/NewsletterSignup.vue')['default']
     Packages: typeof import('./src/components/Packages.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

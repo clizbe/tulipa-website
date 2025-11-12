@@ -14,10 +14,44 @@ import App from './App.vue'
 import { createApp } from 'vue'
 
 // Styles
+import 'vuetify/styles'
 import 'unfonts.css'
+
+// Vuetify
+import { createVuetify } from 'vuetify'
+
+const vuetify = createVuetify({
+  theme: {
+    defaultTheme: 'dark',
+    themes: {
+      light: {
+        colors: {
+          background: '#FFFFFF',
+          surface: '#F5F5F5',
+          primary: '#6200EE',
+          secondary: '#03DAC6',
+          error: '#B00020',
+        }
+      },
+      dark: {
+        colors: {
+          background: '#121212ff',
+          surface: '#31193bff',
+          primary: '#BB86FC',
+          secondary: '#03DAC6',
+          error: '#CF6679',
+        }
+      }
+    }
+  },
+  typography: {
+    fontFamily: 'Roboto, sans-serif',
+    htmlFontSize: 16,
+  }
+})
 
 const app = createApp(App)
 
 registerPlugins(app)
-
+app.use(vuetify)
 app.mount('#app')

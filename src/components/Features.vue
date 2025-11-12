@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    class="mx-auto"
-    max-width="1500"
-    rounded="lg"
-  >
+  <v-container class="mx-auto" max-width="1500" style="background-color: #121212ff; border-radius: 16px; padding: 2rem;">
     <v-row class="pa-4">
       <v-col
       v-for="(item, index) in feature_list"
@@ -11,17 +7,19 @@
       cols="12"
       md="6"
       >
-      <v-list lines="one">
+      <v-list lines="two" style="background-color: #121212ff;">
         <v-list-item
         :title="item.title"
         :subtitle="item.subtitle"
         prepend-icon="mdi-check-circle-outline"
+        class="wrapped-subtitle"
+        style="background-color: #121212ff;"
         >
         </v-list-item>
       </v-list>
       </v-col>
     </v-row>
-  </v-card>
+  </v-container>
 </template>
 
 <script setup>
@@ -68,3 +66,11 @@
     },
   ]
 </script>
+
+<style scoped>
+.wrapped-subtitle :deep(.v-list-item-subtitle) {
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+</style>
