@@ -1,7 +1,4 @@
 <template>
-  <!-- FAQ Section -->
-  <div class="faq-container" />
-
   <!-- Video Section -->
   <v-container class="mx-auto">
     <h1 class="mb-4">Videos</h1>
@@ -29,13 +26,12 @@
   <!-- Posters Section -->
   <v-container>
     <h1 class="mb-4">Posters</h1>
-    <v-row>
+    <v-row class="flex-nowrap" style="overflow-x: auto">
       <v-col
         v-for="(pdf, index) in pdfs"
         :key="index"
-        cols="12"
-        md="3"
-        sm="6"
+        class="auto"
+        style="min-width: 220px;"
       >
         <v-card
           class="pdf-preview"
@@ -55,6 +51,27 @@
       </v-col>
     </v-row>
   </v-container>
+
+  <!-- FAQ Section -->
+  <v-container class="mx-auto">
+    <h1 class="mb-4">FAQ</h1>
+
+    <v-expansion-panels multiple>
+      <v-expansion-panel
+        v-for="(item, index) in faqs"
+        :key="index"
+      >
+        <v-expansion-panel-title class="text-h6">
+          {{ item.question }}
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          {{ item.answer }}
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
+
+  </v-container>
+
 </template>
 
 <script setup>
@@ -92,6 +109,11 @@
       thumbnail: 'thumbnails/Poster4_Packages.png',
       url: 'pdfs/250319_Poster4_Packages.pdf',
     },
+    {
+      title: 'Tulipa Clustering',
+      thumbnail: 'thumbnails/250909_Tulipa_Clustering.png',
+      url: 'pdfs/250909_Tulipa_Clustering.pdf',
+    },
   ]
 
   function openPDF (url) {
@@ -107,6 +129,64 @@
       })),
     )
   })
+
+  const faqs = [
+    {
+      question: 'What is Tulipa?',
+      answer: 'Tulipa is a modelling framework for analysing future energy systems through investment (capacity expansion) and dispatch (operations) optimisation. The underlying methodology is mixed-integer linear programming (MILP). Tulipa is designed to be flexible, scalable, and performant, making it suitable for a wide range of applications.',
+      open: false,
+    },
+    {
+      question: 'How are systems represented in Tulipa?',
+      answer: 'Analysts can build energy systems in Tulipa using five generalized building blocks: Production, Consumption, Conversion, Storage, and Transport. These building blocks can be tailored and combined to model complex energy systems. The same system can be modelled in multiple ways depending on the scope of the analysis.',
+      open: false,
+    },
+    {
+      question: 'What geographic scope does Tulipa cover?',
+      answer: 'The geographic scope depends entirely on the data. You can build an energy system on the moon, if you like.',
+      open: false,
+    },
+    {
+      question: 'What energy carriers does it include?',
+      answer: 'As a generalized framework, Tulipa can model virtually any energy carrier or commodity - they are defined in the data. Special limitations (constraints) are available for modelling electricity assets.',
+      open: false,
+    },
+    {
+      question: 'What size of energy system can it handle?',
+      answer: 'Tulipa is built to handle large and detailed systems, but since it is generalized, you can also model small systems. It depends on data. With flexible resolution, you can also model a detailed small system (or asset) inside a larger system.',
+      open: false,
+    },
+    {
+      question: 'What technologies are included?',
+      answer: 'Tulipa can model virtually all technologies using generalized building blocks: Production, Consumption, Conversion, Storage, and Transport. For instance, a Production asset might be a windfarm or an oil well. A Transport asset could be an electricity cable, a gas pipeline, or a shipping route. Some technological constraints (such as Unit Commitment) even have multiple formulations, so the analyst can choose the appropriate level of detail and computational burden.',
+      open: false,
+    },
+    {
+      question: 'What time resolution does it use?',
+      answer: 'Tulipa is the only existing model that has fully-flexible temporal resolution. That means different energy carriers, geographic regions, or time horizons can have different temporal resolutions - and they do not have to be multiples of each other. This means the analyst can reduce resolution where unnecessary, and increase it where needed, to get the best balance of accuracy and computational burden.',
+      open: false,
+    },
+    {
+      question: 'Does Tulipa do investments?',
+      answer: 'Yes, Tulipa includes endogenous investment optimisation.',
+      open: false,
+    },
+    {
+      question: 'Does Tulipa do optimal dispatch?',
+      answer: 'Yes, Tulipa includes endogenous dispatch optimisation.',
+      open: false,
+    },
+    {
+      question: 'Does Tulipa have modelling to generate alternatives (MGA)?',
+      answer: 'Almost - we have created NearOptimalAlternatives.jl, but it still needs polishing and integration into the workflow.',
+      open: false,
+    },
+    {
+      question: 'Can I use Tulipa for my research?',
+      answer: 'Yes, Tulipa is open-source under an Apache 2.0 license. You can download it today by clicking Get Started in the navigation bar.',
+      open: false,
+    },
+  ]
 </script>
 
 <style scoped>
@@ -144,19 +224,4 @@
   transform: scale(1.02);
 }
 
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.faq-title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.faq-list {
-  list-style: none;
-  padding: 0;
-}
 </style>
