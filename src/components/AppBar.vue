@@ -33,7 +33,6 @@
 </template>
 
 <script setup>
-  import { computed, ref } from 'vue'
   import { useTheme } from 'vuetify'
 
   const theme = useTheme()

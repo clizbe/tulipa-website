@@ -6,14 +6,6 @@ Published Website: https://clizbe.github.io/tulipa-website/
 
 It is built using [Vuetify](https://vuetifyjs.com/) and published through Github Pages.
 
-# Development Documentation for New Contributors
-
-Welcome to the project! This document provides a clear overview of how to set up, run, and contribute to the website built with **Vue 3**, **Vuetify**, and **npm**.
-
-# Development Documentation for New Contributors
-
-Welcome to the project! This document provides a clear overview of how to set up, run, and contribute to the website built with **Vue 3**, **Vuetify**, and **npm**.
-
 ## 🚀 Getting Started
 
 ### **Prerequisites**
@@ -54,24 +46,24 @@ This launches the local dev server. Click the localhost link that is generated t
 
 The basic project structure:
 
-```
+```markdown
 project-root/
 │  package.json
 │  vite.config.mjs
 │  README.md
 │
 ├─ src/
-│   ├─ assets/      
-│   ├─ components/  Content blocks
-│   ├─ layouts/     
-│   ├─ pages/       Web pages - combine content blocks
+│   ├─ assets/      Small images, icons, fonts, CSS used inside components
+│   ├─ components/  Content blocks & structural elements (nav, header, footer)
+│   ├─ layouts/     Unused - see App.vue
+│   ├─ pages/       Web pages - combined content blocks
 │   ├─ plugins/     (admin) Vuetify setup, global config
 │   ├─ router/      (admin) Vue Router configuration
 │   ├─ stores/      (admin) Global state management
 │   ├─ styles/
 │   └─ App.vue      Global header, footer, styles
 │
-├─ public/          External images etc
+├─ public/          Large files, PDFs, static downloads, favicons
 |   ├─ logos/
 |   ├─ pdfs/
 |   └─ thumbnails/
@@ -113,10 +105,6 @@ npm run lint:fix
 * PascalCase for component files: `MyComponent.vue`
 * Use clear, descriptive names
 
-### **4. Folder Organization**
-
-Group files by feature when possible.
-
 ---
 
 ## 🔄 Git Workflow
@@ -124,12 +112,14 @@ Group files by feature when possible.
 ### **1. Create a new branch**
 
 ```bash
-git checkout -b feature/my-new-feature
+git switch -c issue#-my-new-feature
 ```
 
 ### **2. Make your changes & commit**
 
 ```bash
+git add . # Adds all changed files
+git status # Check that added files are correct
 git commit -m "Add new feature"
 ```
 

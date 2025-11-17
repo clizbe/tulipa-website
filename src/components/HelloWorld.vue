@@ -9,7 +9,7 @@
       />
 
       <div class="mb-8 text-center">
-        <h1 class="text-h3 font-weight-bold">Tulipa is an open-source framework <br> </br>for analyzing energy systems.</h1>
+        <h1 class="text-h3 font-weight-bold">Tulipa is an open-source framework for analyzing energy systems.</h1>
       </div>
 
       <v-row>

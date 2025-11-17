@@ -28,13 +28,16 @@
         </h2>
         <p>
           Tulipa is designed for modelling large and complex energy systems, without sacrificing accuracy.
-          While other models may have more features, adding these features to large-scale systems often makes them unsolvable.
+          While other frameworks may have more features, adding these features to large-scale models often makes them unsolvable.
           Tulipa focuses on efficient mathematical formulations and flexible features that keep the problem size manageable -
           so you can include more of the details that you need, without running into computational limits.
-          <br>  </br>
-          <br>  </br>
-          Tulipa is <b>not</b> suited for power system analyses with microsecond resolution, nor for real-time control applications. Also, Tulipa focuses more on performance than user-friendliness,
-          so novice users may have difficulty. But we are continuously working to improve the documentation and transparency of the model.
+        </p>
+        <p class="mt-6">
+          Tulipa is <b>not</b> suited for power system analyses with microsecond resolution, nor for real-time control applications.
+        </p>
+        <p>
+          Also, we focus more on performance than user-friendliness,so novice users may have difficulty.
+          But we are continuously working to improve the documentation and transparency of the tools.
         </p>
       </div>
     </v-card>

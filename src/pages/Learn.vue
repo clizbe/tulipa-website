@@ -103,7 +103,7 @@
         const img = new Image()
         img.src = p.thumbnail
         img.addEventListener('load', resolve)
-        img.onerror = resolve // in case an image fails
+        img.addEventListener('error', resolve)
       })),
     )
   })
