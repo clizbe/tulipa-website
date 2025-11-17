@@ -1,11 +1,10 @@
 //Beehiiv is the newsletter service used here
 
 <template>
-  <v-container class="d-flex justify-center my-8">
+  <v-container class="d-flex justify-center my-2" style="padding: 0;">
     <div
       ref="beehiivContainer"
       class="beehiiv-wrapper"
-      style="width: 100%; max-width: 600px;"
     ></div>
   </v-container>
 </template>
@@ -22,7 +21,7 @@ onMounted(() => {
       class="beehiiv-embed"
       frameborder="0"
       scrolling="no"
-      style="width: 100%; height: 339px; border-radius: 16px; display: block;"
+      style="width: 100%; height: 339px; display: block; background-color: white;"
     ></iframe>
   `
 
@@ -37,14 +36,18 @@ onMounted(() => {
 .beehiiv-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 0;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  padding: 1rem;
 }
 
 .beehiiv-embed {
   border: none;
-  border-radius: 16px;
+  border-radius: 0;
 }
 </style>

@@ -1,11 +1,31 @@
 <template>
   <!-- FAQ Section -->
   <div class="faq-container">
-    <h1 class="faq-title"></h1>
-    <ul class="faq-list">
-      <!-- FAQ items will go here -->
-    </ul>
   </div>
+
+  <!-- Video Section -->
+  <v-container class="mx-auto">
+    <h1 class="mb-4">Videos</h1>
+    <v-row>
+      <v-col
+        v-for="(video, index) in videos"
+        :key="index"
+        cols="12"
+        md="6"
+      >
+        <div class="video-wrapper">
+          <iframe
+            :src="`https://www.youtube.com/embed/${video.videoId}`"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p class="video-title">{{ video.title }}</p>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 
   <!-- Posters Section -->
   <v-container>
@@ -40,6 +60,17 @@
 
 <script setup>
 import { onBeforeMount } from 'vue'
+
+const videos = [
+  {
+    title: 'The art of creating fast and reliable energy models | Germán Morales | PyPSA Community',
+    videoId: 'Zij0eXfejbE'
+  },
+  {
+    title: 'TulipaEnergyModel.jl - Tooling for the energy transition | Lauren Clisby | JuliaCon Local Paris',
+    videoId: 'VOvNblt07HQ'
+  },
+]
 
 const pdfs = [
   {
@@ -80,6 +111,31 @@ onBeforeMount(async () => {
 </script>
 
 <style scoped>
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.video-title {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
 .pdf-preview {
   cursor: pointer;
   transition: transform 0.2s;

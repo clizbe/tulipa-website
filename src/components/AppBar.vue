@@ -6,6 +6,12 @@
       </router-link>
     </v-app-bar-title>
 
+    <v-btn
+      :icon="isDark ? 'mdi-weather-sunny' : 'mdi-weather-night'"
+      @click="toggleTheme"
+      variant="text"
+    ></v-btn>
+
     <v-btn text="Home" to="/"></v-btn>
 
     <v-btn text="Learn" to="/Learn"></v-btn>
@@ -20,11 +26,25 @@
 
 </template>
 
+<script setup>
+import { useTheme } from 'vuetify'
+import { ref, computed } from 'vue'
+
+const theme = useTheme()
+const isDark = computed(() => theme.global.name.value === 'dark')
+
+const toggleTheme = () => {
+  theme.global.name.value = isDark.value ? 'light' : 'dark'
+}
+</script>
+
 <style scoped>
 .title-link {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 .title-link:hover {

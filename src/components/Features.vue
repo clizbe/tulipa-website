@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mx-auto" max-width="1500" style="background-color: #121212ff; border-radius: 16px; padding: 2rem;">
+  <v-container class="mx-auto" max-width="900" style="border-radius: 16px; padding: 2rem;">
     <v-row class="pa-4">
       <v-col
       v-for="(item, index) in feature_list"
@@ -7,13 +7,13 @@
       cols="12"
       md="6"
       >
-      <v-list lines="two" style="background-color: #121212ff;">
+      <v-list lines="two" style="background-color: transparent;">
         <v-list-item
         :title="item.title"
         :subtitle="item.subtitle"
         prepend-icon="mdi-check-circle-outline"
         class="wrapped-subtitle"
-        style="background-color: #121212ff;"
+        style="background-color: transparent;"
         >
         </v-list-item>
       </v-list>
@@ -26,7 +26,7 @@
   const feature_list = [
     {
       title: 'Investment Optimisation',
-      subtitle: 'Expand future energy systems to meet demands at the lowest societal cost.',
+      subtitle: 'Expand and compare future energy systems to meet demands at the lowest societal cost.',
     },
     {
       title: 'Dispatch Optimisation',
@@ -34,7 +34,7 @@
     },
     {
       title: 'All Technologies',
-      subtitle: 'Configure technological limits through data.',
+      subtitle: 'Configure any technology with specific limits and behavior - for a more realistic system.',
     },
     {
       title: 'All Energy Carriers and Materials',
@@ -42,7 +42,7 @@
     },
     {
       title: 'Any Geographical Area',
-      subtitle: 'Regional, national, or continental - it all depends on data.',
+      subtitle: 'Build any regional, national, or continental system - it all depends on data.',
     },
     {
       title: 'Mixed Levels of Detail',
@@ -68,9 +68,11 @@
 </script>
 
 <style scoped>
+.wrapped-subtitle :deep(.v-list-item-title),
 .wrapped-subtitle :deep(.v-list-item-subtitle) {
   white-space: normal !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
+  color: rgb(var(--v-theme-on-background)) !important;
 }
 </style>
