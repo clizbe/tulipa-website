@@ -5,7 +5,7 @@
     <div
       ref="beehiivContainer"
       class="beehiiv-wrapper"
-    />
+    ></div>
   </v-container>
 </template>
 
@@ -21,7 +21,7 @@
       class="beehiiv-embed"
       frameborder="0"
       scrolling="no"
-      style="width: 100%; height: 339px; display: block; background-color: white;"
+      style="width: 100%; height: 339px; display: block;"
     ></iframe>
   `
 
@@ -49,5 +49,6 @@
 .beehiiv-embed {
   border: none;
   border-radius: 0;
+  align-items:center;
 }
 </style>
