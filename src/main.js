@@ -4,21 +4,21 @@
  * Bootstraps Vuetify and other plugins then mounts the App`
  */
 
+// Composables
+import { createApp } from 'vue'
+
+// Vuetify
+import { createVuetify } from 'vuetify'
+
 // Plugins
 import { registerPlugins } from '@/plugins'
 
 // Components
 import App from './App.vue'
-
-// Composables
-import { createApp } from 'vue'
-
 // Styles
 import 'vuetify/styles'
-import 'unfonts.css'
 
-// Vuetify
-import { createVuetify } from 'vuetify'
+import 'unfonts.css'
 
 const vuetify = createVuetify({
   theme: {
@@ -31,7 +31,7 @@ const vuetify = createVuetify({
           primary: '#6200EE',
           secondary: '#03DAC6',
           error: '#B00020',
-        }
+        },
       },
       dark: {
         colors: {
@@ -40,14 +40,14 @@ const vuetify = createVuetify({
           primary: '#BB86FC',
           secondary: '#03DAC6',
           error: '#CF6679',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   typography: {
     fontFamily: 'Roboto, sans-serif',
     htmlFontSize: 16,
-  }
+  },
 })
 
 const app = createApp(App)

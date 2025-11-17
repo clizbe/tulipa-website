@@ -1,41 +1,47 @@
 <template>
-  <v-app-bar :elevation="2" rounded color="background">
+  <v-app-bar color="background" :elevation="2" rounded>
     <v-app-bar-title>
-      <router-link to="/" class="title-link">
+      <router-link class="title-link" to="/">
         Tulipa Energy
       </router-link>
     </v-app-bar-title>
 
     <v-btn
       :icon="isDark ? 'mdi-weather-sunny' : 'mdi-weather-night'"
-      @click="toggleTheme"
       variant="text"
-    ></v-btn>
+      @click="toggleTheme"
+    />
 
-    <v-btn text="Home" to="/"></v-btn>
+    <v-btn text="Home" to="/" />
 
-    <v-btn text="Learn" to="/Learn"></v-btn>
+    <v-btn text="Learn" to="/Learn" />
 
-    <v-btn text="About" to="/About"></v-btn>
+    <v-btn text="About" to="/About" />
 
-    <v-btn rounded="xl" text="Get Started" variant="outlined" color="purple" href="https://tulipaenergy.github.io/TulipaEnergyModel.jl/stable/20-user-guide/00-getting-started/"></v-btn>
+    <v-btn
+      color="purple"
+      href="https://tulipaenergy.github.io/TulipaEnergyModel.jl/stable/20-user-guide/00-getting-started/"
+      rounded="xl"
+      text="Get Started"
+      variant="outlined"
+    />
 
-    <v-btn icon="mdi-github" href="https://github.com/TulipaEnergy/TulipaEnergyModel.jl"></v-btn>
+    <v-btn href="https://github.com/TulipaEnergy/TulipaEnergyModel.jl" icon="mdi-github" />
 
   </v-app-bar>
 
 </template>
 
 <script setup>
-import { useTheme } from 'vuetify'
-import { ref, computed } from 'vue'
+  import { computed, ref } from 'vue'
+  import { useTheme } from 'vuetify'
 
-const theme = useTheme()
-const isDark = computed(() => theme.global.name.value === 'dark')
+  const theme = useTheme()
+  const isDark = computed(() => theme.global.name.value === 'dark')
 
-const toggleTheme = () => {
-  theme.global.name.value = isDark.value ? 'light' : 'dark'
-}
+  function toggleTheme () {
+    theme.global.name.value = isDark.value ? 'light' : 'dark'
+  }
 </script>
 
 <style scoped>

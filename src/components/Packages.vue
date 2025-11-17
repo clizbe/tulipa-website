@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row class="mx-auto" max-width="1200" dense>
+    <v-row class="mx-auto" dense max-width="1200">
       <v-col v-for="link in links" :key="link.href" cols="6">
         <v-card
           append-icon="mdi-github"
@@ -14,8 +14,7 @@
           target="_blank"
           :title="link.title"
           variant="tonal"
-        >
-        </v-card>
+        />
       </v-col>
     </v-row>
   </v-container>

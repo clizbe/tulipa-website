@@ -1,7 +1,7 @@
 <template>
   <v-footer class="text-center d-flex flex-column ga-2 py-4" color="background">
 
-    <v-divider class="my-2" thickness="2" width="50"></v-divider>
+    <v-divider class="my-2" thickness="2" width="50" />
 
     <div class="text-caption font-weight-regular opacity-60">
       This research received funding from TNO and the Dutch Research Council (NWO – ESI.2019.008).
@@ -9,7 +9,7 @@
       information contained therein.
     </div>
 
-    <v-divider></v-divider>
+    <v-divider />
 
     <div>
       {{ new Date().getFullYear() }} — <strong>Tulipa</strong>

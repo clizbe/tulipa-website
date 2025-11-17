@@ -21,7 +21,7 @@
   </v-container>
 
   <v-container class="mx-auto" max-width="1000">
-    <v-card color="surface" rounded="xl" class="pa-12">
+    <v-card class="pa-12" color="surface" rounded="xl">
       <div class="text-center">
         <h2 class="text-h4 font-weight-bold mb-6">
           Why choose Tulipa?
@@ -40,14 +40,14 @@
     </v-card>
   </v-container>
 
-  <Features/>
+  <Features />
 
-  <NewsletterSignup/>
+  <NewsletterSignup />
 
 </template>
 
 <script setup>
-import Features from '@/components/Features.vue'
-import NewsletterSignup from '@/components/NewsletterSignup.vue'
+  import Features from '@/components/Features.vue'
+  import NewsletterSignup from '@/components/NewsletterSignup.vue'
 
 </script>

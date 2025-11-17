@@ -5,17 +5,17 @@
     <div
       ref="beehiivContainer"
       class="beehiiv-wrapper"
-    ></div>
+    />
   </v-container>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+  import { onMounted, ref } from 'vue'
 
-const beehiivContainer = ref(null)
+  const beehiivContainer = ref(null)
 
-onMounted(() => {
-  beehiivContainer.value.innerHTML = `
+  onMounted(() => {
+    beehiivContainer.value.innerHTML = `
     <iframe
       src="https://subscribe-forms.beehiiv.com/dba2574f-e42e-4824-8c5e-4c1478ef8c33"
       class="beehiiv-embed"
@@ -25,11 +25,11 @@ onMounted(() => {
     ></iframe>
   `
 
-  const script = document.createElement('script')
-  script.src = 'https://subscribe-forms.beehiiv.com/embed.js'
-  script.async = true
-  document.body.appendChild(script)
-})
+    const script = document.createElement('script')
+    script.src = 'https://subscribe-forms.beehiiv.com/embed.js'
+    script.async = true
+    document.body.append(script)
+  })
 </script>
 
 <style scoped>

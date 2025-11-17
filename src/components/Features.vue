@@ -2,21 +2,20 @@
   <v-container class="mx-auto" max-width="900" style="border-radius: 16px; padding: 2rem;">
     <v-row class="pa-4">
       <v-col
-      v-for="(item, index) in feature_list"
-      :key="index"
-      cols="12"
-      md="6"
+        v-for="(item, index) in feature_list"
+        :key="index"
+        cols="12"
+        md="6"
       >
-      <v-list lines="two" style="background-color: transparent;">
-        <v-list-item
-        :title="item.title"
-        :subtitle="item.subtitle"
-        prepend-icon="mdi-check-circle-outline"
-        class="wrapped-subtitle"
-        style="background-color: transparent;"
-        >
-        </v-list-item>
-      </v-list>
+        <v-list lines="two" style="background-color: transparent;">
+          <v-list-item
+            class="wrapped-subtitle"
+            prepend-icon="mdi-check-circle-outline"
+            style="background-color: transparent;"
+            :subtitle="item.subtitle"
+            :title="item.title"
+          />
+        </v-list>
       </v-col>
     </v-row>
   </v-container>

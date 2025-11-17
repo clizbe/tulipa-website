@@ -1,7 +1,6 @@
 <template>
   <!-- FAQ Section -->
-  <div class="faq-container">
-  </div>
+  <div class="faq-container" />
 
   <!-- Video Section -->
   <v-container class="mx-auto">
@@ -15,12 +14,12 @@
       >
         <div class="video-wrapper">
           <iframe
-            :src="`https://www.youtube.com/embed/${video.videoId}`"
-            title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          ></iframe>
+            frameborder="0"
+            :src="`https://www.youtube.com/embed/${video.videoId}`"
+            title="YouTube video player"
+          />
           <p class="video-title">{{ video.title }}</p>
         </div>
       </v-col>
@@ -35,22 +34,22 @@
         v-for="(pdf, index) in pdfs"
         :key="index"
         cols="12"
-        sm="6"
         md="3"
+        sm="6"
       >
         <v-card
-          @click="openPDF(pdf.url)"
           class="pdf-preview"
           elevation="2"
           hover
+          @click="openPDF(pdf.url)"
         >
           <v-img
-            :src="pdf.thumbnail"
-            height="300"
-            position="top"
             cover
+            height="300"
             loading="eager"
-          ></v-img>
+            position="top"
+            :src="pdf.thumbnail"
+          />
           <v-card-title class="text-subtitle-1">{{ pdf.title }}</v-card-title>
         </v-card>
       </v-col>
@@ -59,55 +58,55 @@
 </template>
 
 <script setup>
-import { onBeforeMount } from 'vue'
+  import { onBeforeMount } from 'vue'
 
-const videos = [
-  {
-    title: 'The art of creating fast and reliable energy models | Germán Morales | PyPSA Community',
-    videoId: 'Zij0eXfejbE'
-  },
-  {
-    title: 'TulipaEnergyModel.jl - Tooling for the energy transition | Lauren Clisby | JuliaCon Local Paris',
-    videoId: 'VOvNblt07HQ'
-  },
-]
+  const videos = [
+    {
+      title: 'The art of creating fast and reliable energy models | Germán Morales | PyPSA Community',
+      videoId: 'Zij0eXfejbE',
+    },
+    {
+      title: 'TulipaEnergyModel.jl - Tooling for the energy transition | Lauren Clisby | JuliaCon Local Paris',
+      videoId: 'VOvNblt07HQ',
+    },
+  ]
 
-const pdfs = [
-  {
-    title: 'Overview',
-    thumbnail: 'thumbnails/Poster1_HighLevel.png',
-    url: 'pdfs/250319_Poster1_HighLevel.pdf'
-  },
-  {
-    title: 'Analysis Pipeline',
-    thumbnail: 'thumbnails/Poster2_AnalysisPipeline.png',
-    url: 'pdfs/250319_Poster2_AnalysisPipeline.pdf'
-  },
-  {
-    title: 'Key Research',
-    thumbnail: 'thumbnails/Poster3_Research.png',
-    url: 'pdfs/250319_Poster3_Research.pdf'
-  },
-  {
-    title: 'Software Overview',
-    thumbnail: 'thumbnails/Poster4_Packages.png',
-    url: 'pdfs/250319_Poster4_Packages.pdf'
-  },
-]
+  const pdfs = [
+    {
+      title: 'Overview',
+      thumbnail: 'thumbnails/Poster1_HighLevel.png',
+      url: 'pdfs/250319_Poster1_HighLevel.pdf',
+    },
+    {
+      title: 'Analysis Pipeline',
+      thumbnail: 'thumbnails/Poster2_AnalysisPipeline.png',
+      url: 'pdfs/250319_Poster2_AnalysisPipeline.pdf',
+    },
+    {
+      title: 'Key Research',
+      thumbnail: 'thumbnails/Poster3_Research.png',
+      url: 'pdfs/250319_Poster3_Research.pdf',
+    },
+    {
+      title: 'Software Overview',
+      thumbnail: 'thumbnails/Poster4_Packages.png',
+      url: 'pdfs/250319_Poster4_Packages.pdf',
+    },
+  ]
 
-const openPDF = (url) => {
-  window.open(url, '_blank')
-}
-onBeforeMount(async () => {
-  await Promise.all(
-    pdfs.map(p => new Promise(resolve => {
-      const img = new Image()
-      img.src = p.thumbnail
-      img.onload = resolve
-      img.onerror = resolve // in case an image fails
-    }))
-  )
-})
+  function openPDF (url) {
+    window.open(url, '_blank')
+  }
+  onBeforeMount(async () => {
+    await Promise.all(
+      pdfs.map(p => new Promise(resolve => {
+        const img = new Image()
+        img.src = p.thumbnail
+        img.addEventListener('load', resolve)
+        img.onerror = resolve // in case an image fails
+      })),
+    )
+  })
 </script>
 
 <style scoped>
