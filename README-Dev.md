@@ -28,7 +28,7 @@ Before you begin, make sure you have:
 ### **1. Clone the Repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/clizbe/tulipa-website
 cd <project-folder>
 ```
 
@@ -46,64 +46,36 @@ This installs all packages listed in `package.json`.
 npm run dev
 ```
 
-This launches the local dev server. The site is usually available at:
-
-```
-http://localhost:3000
-```
-
-(If the project uses Vite — adjust the port based on config.)
+This launches the local dev server. Click the localhost link that is generated to view live updates as you work.
 
 ---
 
 ## 🧱 Project Structure
 
-A typical structure for a Vuetify + Vite project:
+The basic project structure:
 
 ```
 project-root/
 │  package.json
-│  vite.config.js
+│  vite.config.mjs
 │  README.md
 │
 ├─ src/
-│   ├─ assets/
-│   ├─ components/
-│   ├─ composables/
-│   ├─ layouts/
-│   ├─ pages/ or views/
-│   ├─ plugins/
-│   ├─ router/
-│   ├─ store/  (Pinia or Vuex)
-│   └─ App.vue
+│   ├─ assets/      
+│   ├─ components/  Content blocks
+│   ├─ layouts/     
+│   ├─ pages/       Web pages - combine content blocks
+│   ├─ plugins/     (admin) Vuetify setup, global config
+│   ├─ router/      (admin) Vue Router configuration
+│   ├─ stores/      (admin) Global state management
+│   ├─ styles/
+│   └─ App.vue      Global header, footer, styles
 │
-└─ public/
+├─ public/          External images etc
+|   ├─ logos/
+|   ├─ pdfs/
+|   └─ thumbnails/
 ```
-
-### **Key Folders**
-
-* **components/** – Reusable Vue components
-* **layouts/** – App-wide structural templates
-* **pages or views/** – Page-level components
-* **plugins/** – Vuetify setup, global config
-* **router/** – Vue Router configuration
-* **store/** – Global state management
-
----
-
-## 🎨 Vuetify Basics
-
-Vuetify is already configured in `src/plugins/vuetify.js` (or similar).
-
-To use Vuetify components:
-
-```vue
-<v-btn color="primary">Click me</v-btn>
-```
-
-### Custom Theme
-
-Themes are typically defined in the Vuetify plugin file. To update/add theme colors, modify the `theme` section.
 
 ---
 
